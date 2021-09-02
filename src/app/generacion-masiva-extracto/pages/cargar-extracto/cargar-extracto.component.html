@@ -1,0 +1,34 @@
+<app-encabezado></app-encabezado>
+
+<div class="container">
+  <div class="row generarExtracto">
+    <div class="col-12 align-self-center">
+      <div class="d-flex justify-content-center">
+        <div
+          class="spinner-border"
+          style="width: 5rem; height: 5rem;"
+          role="status"
+        ></div>
+      </div>
+    </div>
+    <div class="col-12 mt-2">
+    
+      <p class="fs-2 text-center">
+        Los extractos están siendo generados.  Por favor, no cierre ni actualice esta pestaña
+      </p>
+      <hr />
+    
+     
+      <div class="card">  
+        <p-progressBar  [value]="value" ></p-progressBar>
+    
+     </div>
+     
+     
+    </div>
+  </div>
+</div>
+
+
+
+<app-footer></app-footer>

@@ -1,0 +1,152 @@
+
+body{
+    font-family: 'Roboto', sans-serif;
+   
+}
+
+
+
+.icono-iniciar-sesion {
+    margin-top: -1rem;
+    color: #000;
+    font-size: 4.7rem;
+}
+
+/* Logo */
+.logoCorfi{
+    margin: 0 auto;
+    max-width: 450px;
+}
+
+/* end */
+
+.icono{
+    margin-top: 5px; 
+    width: 25px;
+    height: 25px;
+    color: rgba(0, 59, 83);
+}
+
+.card-container.card {
+    max-width: 390px;
+    
+    padding: 60px 40px;
+    
+}
+
+.btn {
+    font-weight: 700;
+    height: 36px;
+    cursor: pointer;
+}
+
+
+.card {
+    background-color: rgba(250, 250, 250,.8);
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    border-radius: 35px;
+    box-shadow: 0px 1px 1px #ccc inset, 0px 1px 1px #ccc ;
+}
+
+.profile-img-card {
+    width: 6.25rem;
+    height: 6.25rem;
+    margin: 0 auto 10px;
+    display: block;
+    border-radius: 50%;
+}
+
+
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+
+
+
+
+.form-logion input[type=email],
+.form-logion input[type=text],
+.form-logion input[type=password],
+.form-logion button {
+    width: 100%;
+    height: 60px;
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 1.125rem;
+}
+.form-logion input[type=email]:focus,
+.form-logion input[type=text]:focus,
+.form-logion input[type=password]:focus,
+.form-logion button {
+    outline: none;
+    box-shadow: none;
+}
+
+.form-logion .form-control:focus {
+    border-color: rgba(0, 59, 83);
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+.btn.btn-signin {
+    margin-top: 30px !important;
+    background-color: rgba(0, 59, 83);
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    
+    border: none;
+    transition: all ease 0.5s;
+}
+
+
+  .btn-signin:hover,
+  .btn-signin:focus
+  {
+      background: rgba(0, 59, 83,.8);
+      border: 2px solid #fff;
+     
+  }
+
+.forgot-password {
+    color: rgb(0, 59, 83);
+}
+
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus{
+    color: rgba(0, 59, 83)
+}
+button.btn.btn-lg.btn-primary.btn-block.btn-signin {
+    width: 140px;
+    margin: 0 auto;
+   
+}
+
+/* Querry  */
+@media (max-width: 420px ) {
+    
+    .logoCorfi {
+
+        width: 65%;
+        background-position: over;
+    }
+    
+}
+
+/* errores  */
+.estiloInicio {
+  color: red;
+  list-style: circle;
+}

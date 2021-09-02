@@ -1,0 +1,19 @@
+
+.generar-extracto{
+
+    height: 100vh;
+
+}
+
+
+
+.generar-extracto .generarExtracto{
+    background-color: #003b53;
+    outline: none;
+    border: none;
+    transition: all 3ms;
+    border: 1px solid #000;
+    box-shadow: 0px 1px 1px #000;
+}
+
+

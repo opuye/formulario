@@ -1,0 +1,35 @@
+
+
+html,body{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+@media screen and (max-width: 630px){
+    .correo
+    a
+    small {
+        font-size:0.78em;
+    }
+}
+
+footer a {
+    margin: 0 auto;
+    color: #fff;
+    font-size: 18px;
+    transition-duration: 0.2s;
+}
+footer a:hover {
+    color: #ccc;
+    text-decoration: none;
+}
+.copy {
+    font-size: 15px;
+    padding: 10px;
+    border-top: 1px solid #FFFFFF;
+}
+.footer-middle {
+    padding-top: 2em;
+    color: white;
+    margin: 0 auto;
+}

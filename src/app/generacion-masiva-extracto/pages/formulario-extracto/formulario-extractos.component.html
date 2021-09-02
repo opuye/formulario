@@ -1,0 +1,412 @@
+<app-encabezado></app-encabezado>
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-12">
+      <form
+        class="formulario-extracto"
+        (ngSubmit)="generarPlano"
+        [formGroup]="formGeneracionMasiva"
+      >
+        <div class="row justify-content-center">
+          <h3 class="col-10"><strong>Fondo</strong></h3>
+           <!-- para mensaje -->
+        <!--   <span
+            class="col-12 col-md-5 pe-3"
+            placement="top"
+            ngbPopover="Desde que fondo quieres consultar"
+          >
+            <i class="d-none d-md-block fas fa-question-circle"> </i
+          ></span>
+          <span
+            class="col-12 col-md-5 text-start pe-3"
+            placement="top"
+            ngbPopover="Acá podras digitar hasta que fondo"
+            ><i class="d-none d-md-block fas fa-question-circle"></i
+          ></span> -->
+          <div class="form-floating col-10 col-md-5 mt-3">
+            <input
+              type="text"
+              class="form-control"
+              id="desdeFondoInput"
+              placeholder="sddsdsds"
+              formControlName="desdeFondo"
+            />
+
+            <label class="ps-4" for="desdeFondoInput "> Desde fondo </label>
+            <!-- mensajes de error -->
+            <div
+              class="form-text text-danger ms-1"
+              *ngIf="formGeneracionMasiva.controls.desdeFondo.errors && formGeneracionMasiva.controls.desdeFondo.touched "
+            >
+              <span
+                *ngIf="formGeneracionMasiva.controls.desdeFondo.errors.required"
+              >
+                Ingrese el valor Desde fondo
+              </span>
+            </div>
+            <!-- fin -->
+          </div>
+
+          <div class="form-floating col-10 col-md-5 mt-3">
+            <input
+              type="text"
+              id="hastaFondo"
+              class="form-control"
+              formControlName="hastaFondo"
+              placeholder="sddssd"
+            />
+            <label class="ps-4" for="hastaFondo">Hasta fondo</label>
+            <!-- mensajes de error -->
+            <div
+              class="form-text text-danger ms-1"
+              *ngIf="formGeneracionMasiva.controls.hastaFondo.errors && formGeneracionMasiva.controls.hastaFondo.touched "
+            >
+              <span
+                *ngIf="formGeneracionMasiva.controls.hastaFondo.errors.required"
+              >
+                Ingrese el valor Desde fondo
+              </span>
+            </div>
+            <!-- fin -->
+          </div>
+
+          <!-- checkbox de encargo -->
+          <h3 class="mt-5 col-10"><strong>Encargo</strong></h3>
+
+          <div class="col-12 col-md-12  mb-3">
+                    
+            <div class="row justify-content-center ">
+              <div class="col-5">
+                <strong class="titulo-encargo">Tipo de encargo:</strong>
+                <div class="form-check form-check-inline  ">
+                  <input   type="checkbox" name="checkbox-activo" class="form-check-input shadow-none" id="checkbox-activo" >
+                  <label for="checkbox-activo" class="form-check-label">Activo</label>
+                </div>
+
+                <div class="form-check form-check-inline ">
+                  <input type="checkbox" name="checkbox-inactivo" class="form-check-input shadow-none" id="checkbox-inactivo" >
+                  <label for="checkbox-inactivo" class="form-check-label">Inactivo</label>
+                </div>
+  
+                <div class="form-check form-check-inline ">
+                  <input type="checkbox" name="checkbox-cancelado" class="form-check-input shadow-none" id="checkbox-cancelado" >
+                  <label for="checkbox-cancelado" class="form-check-label">Cancelado</label>
+                </div>
+
+                <div class="form-check form-check-inline  ">
+                  <input type="checkbox" name="checkbox-bloqueo" class="form-check-input shadow-none" id="checkbox-bloqueo" >
+                  <label for="checkbox-bloqueo" class="form-check-label">Bloqueo</label>
+                </div>
+
+                <div class="form-check form-check-inline ">
+                  <input type="checkbox" name="checkbox-pendConf" class="form-check-input shadow-none" id="checkbox-pendConf" >
+                  <label for="checkbox-pendConf" class="form-check-label">Pend.Conf</label>
+                </div>
+              </div>
+              <div class="col-5 ">
+                <strong class="titulo-encargo">Estado de encargo:</strong>
+                <div class="form-check form-check-inline checkRight ">
+                  <input 
+                  class="form-check-input shadow-none "
+                   type="radio"
+                   name="flexRadioDefault" 
+                  id="inputFideicomisos"
+                  formControlName="fideicomisos" 
+                  >
+                  <label class="form-check-label " for="inputFideicomisos">
+                    Fideicomisos
+                  </label>
+                </div>
+               
+                <div class="form-check form-check-inline checkRight">
+                  <input
+                   type="radio" 
+                  name="flexRadioDefault"
+                   class="form-check-input shadow-none" 
+                  id="inputInmobiliario"
+                  formControlName="inmobiliario" >
+                  <label for="inputInmobiliario" class="form-check-label">Inmobiliario</label>
+                </div>
+                
+  
+                <div class="form-check form-check-inline checkRight">
+                  <input type="radio"
+                   name="flexRadioDefault"
+                   class="form-check-input shadow-none"
+                   id="inputConsolidado"
+                   formControlName="consolidado" >
+                  <label for="inputConsolidado" class="form-check-label">Consolidado</label>
+                </div>
+
+                <div class="form-check form-check-inline checkRight">
+                  <input 
+                  class="form-check-input shadow-none"
+                   type="radio" 
+                   name="flexRadioDefault"
+                   id="inputInversionistas"
+                   formControlName="inversionistas">
+                  <label class="form-check-label" for="inputInversionistas">
+                    Inversionistas
+                  </label>
+                </div>
+                <div class="form-check form-check-inline checkRight">
+                  <input 
+                  type="radio" 
+                  name="flexRadioDefault"
+                   class="form-check-input shadow-none"
+                   id="inputIndividual"
+                   formControlName="individual"
+                    >
+                  <label for="inputIndividual" class="form-check-label">Individual</label>
+                </div>
+                
+              </div>
+            </div>
+          
+
+          
+      </div>
+          
+
+          <div class="form-floating col-10 col-md-5 mt-3">
+            <input
+              type="text"
+              class="form-control"
+              id="diaSinMvtos"
+              placeholder="dsdds"
+              formControlName="diasSinMvtos"
+            />
+            <label class="ps-4" for="diaSinMvtos">Días sin Mvtos</label>
+             <!-- mensajes de error -->
+             <div
+             class="form-text text-danger ms-1"
+             *ngIf="formGeneracionMasiva.controls.diasSinMvtos.errors && formGeneracionMasiva.controls.diasSinMvtos.touched "
+           >
+             <span
+               *ngIf="formGeneracionMasiva.controls.diasSinMvtos.errors.required"
+             >
+               Ingrese el valor días sin movimientos
+             </span>
+           </div>
+           <!-- fin -->
+          </div>
+          <div class="form-floating col-10 col-md-5 mt-3">
+            <input
+              type="text"
+              class="form-control"
+              id="periodo"
+              placeholder="dsdsd"
+              formControlName="periodo"
+            />
+            <label class="ps-4" for="periodo">Periodo</label>
+              <!-- mensajes de error -->
+              <div
+              class="form-text text-danger ms-1"
+              *ngIf="formGeneracionMasiva.controls.periodo.errors && formGeneracionMasiva.controls.periodo.touched "
+            >
+              <span
+                *ngIf="formGeneracionMasiva.controls.periodo.errors.required"
+              >
+                Ingrese el valor del periodo
+              </span>
+            </div>
+            <!-- fin -->
+          </div>
+          <div class="form-floating col-10 col-md-5 mt-3">
+            <input
+              type="text"
+              class="form-control"
+              id="grupoImpresion"
+              placeholder="dsdsd"
+              formControlName="grupoDeImpresion"
+            />
+            <label class="ps-4" for="grupoImpresion">Grupo de Impresión</label>
+            <!-- mensajes de error -->
+            <div
+            class="form-text text-danger ms-1"
+            *ngIf="formGeneracionMasiva.controls.grupoDeImpresion.errors && formGeneracionMasiva.controls.grupoDeImpresion.touched "
+          >
+            <span
+              *ngIf="formGeneracionMasiva.controls.grupoDeImpresion.errors.required"
+            >
+              Ingrese el valor del grupo de impresión
+            </span>
+          </div>
+          <!-- fin -->
+          </div>
+          <div class="form-floating col-10 col-md-5 mt-3">
+            <input
+              type="text"
+              class="form-control"
+              id="periodo"
+              placeholder="dsds"
+              formControlName="proyecto"
+            />
+            <label class="ps-4" for="periodo">Proyecto</label>
+
+              <!-- mensajes de error -->
+              <div
+              class="form-text text-danger ms-1"
+              *ngIf="formGeneracionMasiva.controls.proyecto.errors && formGeneracionMasiva.controls.proyecto.touched "
+            >
+              <span
+                *ngIf="formGeneracionMasiva.controls.proyecto.errors.required"
+              >
+                Ingrese el valor del proyecto
+              </span>
+            </div>
+            <!-- fin -->
+          </div>
+          <div class="form-floating col-10 col-md-5 mt-3">
+            <input
+              type="text"
+              class="form-control"
+              id="grupoImpresion"
+              placeholder="dssd"
+              formControlName="desdeEncargo"
+            />
+            <label class="ps-4" for="grupoImpresion">Desde Encargo</label>
+             <!-- mensajes de error -->
+             <div
+             class="form-text text-danger ms-1"
+             *ngIf="formGeneracionMasiva.controls.desdeEncargo.errors && formGeneracionMasiva.controls.desdeEncargo.touched "
+           >
+             <span
+               *ngIf="formGeneracionMasiva.controls.desdeEncargo.errors.required"
+             >
+               Ingrese el valor desde encargo
+             </span>
+           </div>
+           <!-- fin -->
+          </div>
+          <div class="form-floating col-10 col-md-5 mt-3">
+            <input
+              type="text"
+              class="form-control"
+              id="hastaEncargo"
+              placeholder="ddsds"
+              formControlName="hastaEncargo"
+            />
+            <label class="ps-4" for="hastaEncargo">Hasta Encargo</label>
+
+              <!-- mensajes de error -->
+              <div
+              class="form-text text-danger ms-1"
+              *ngIf="formGeneracionMasiva.controls.hastaEncargo.errors && formGeneracionMasiva.controls.hastaEncargo.touched "
+            >
+              <span
+                *ngIf="formGeneracionMasiva.controls.hastaEncargo.errors.required"
+              >
+                Ingrese el valor hasta encargo
+              </span>
+            </div>
+            <!-- fin -->
+          </div>
+        </div>
+
+        <!-- Clientes -->
+        <div class="row justify-content-center">
+          <h3 class="mt-5 col-10"><strong>Clientes</strong></h3>
+          <div class="form-floating col-10 col-md-5 mt-3">
+            <input
+              type="text"
+              class="form-control"
+              id="desdeCliente"
+              placeholder="dsds"
+              formControlName="desdeCliente"
+            />
+            <label class="ps-4" for="desdeCliente">Desde cliente</label>
+            <!-- mensajes de error -->
+            <div
+            class="form-text text-danger ms-1"
+            *ngIf="formGeneracionMasiva.controls.desdeCliente.errors && formGeneracionMasiva.controls.desdeCliente.touched "
+          >
+            <span
+              *ngIf="formGeneracionMasiva.controls.desdeCliente.errors.required"
+            >
+              Ingrese el valor desde cliente
+            </span>
+          </div>
+          <!-- fin -->
+          </div>
+          <div class="form-floating col-10 col-md-5 mt-3">
+            <input
+              type="text"
+              class="form-control"
+              id="hastaCliente"
+              placeholder="dsdds"
+              formControlName="hastaCliente"
+            />
+            <label class="ps-4" for="hastaCliente">Hasta cliente</label>
+
+              <!-- mensajes de error -->
+              <div
+              class="form-text text-danger ms-1"
+              *ngIf="formGeneracionMasiva.controls.hastaCliente.errors && formGeneracionMasiva.controls.hastaCliente.touched "
+            >
+              <span
+                *ngIf="formGeneracionMasiva.controls.hastaCliente.errors.required"
+              >
+                Ingrese el valor hasta cliente
+              </span>
+            </div>
+            <!-- fin -->
+          </div>
+
+          <div class="form-floating col-10 col-md-5 mt-3">
+            <input
+              type="text"
+              class="form-control"
+              id="ciudad"
+              placeholder="dsdsd"
+              formControlName="ciudad"
+            />
+            <label class="ps-4" for="ciudad">Ciudad</label>
+               <!-- mensajes de error -->
+               <div
+               class="form-text text-danger ms-1"
+               *ngIf="formGeneracionMasiva.controls.ciudad.errors && formGeneracionMasiva.controls.ciudad.touched "
+             >
+               <span
+                 *ngIf="formGeneracionMasiva.controls.ciudad.errors.required"
+               >
+                 Ingrese el valor de la ciudad
+               </span>
+             </div>
+             <!-- fin -->
+          </div>
+          <div class="form-floating col-10 col-md-5 mt-3"></div>
+
+          <div class="col-10 text-center align-content-center mt-5">
+            <span (click)="ejecutar()" class="pe-3" type="button"
+              ><i class="far fa-save" style="font-size: 32px;"></i
+            ></span>
+            <span (click)="eliminarForm()" class="ps-2" type="button"
+              ><i class="far fa-trash-alt" style="font-size: 32px;"></i
+            ></span>
+          </div>
+        </div>
+
+        <!-- fin de clientes -->
+
+        <div class="row mt-2 mb-5 justify-content-center">
+          <div class="col-md-10">
+            <div class="text-center mb-5">
+              <button
+                id="btngenerarPlano"
+                (click)="generarPlano()"
+                class="btn btn-primary mt-5"
+                style="padding: 20px 30px;"
+              >
+                Generar plano
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

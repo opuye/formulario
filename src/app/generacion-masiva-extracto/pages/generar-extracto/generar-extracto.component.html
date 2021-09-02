@@ -1,0 +1,56 @@
+<app-encabezado></app-encabezado>
+
+
+
+<div class="container">
+    
+
+    <div class="row generar-extracto  ">
+        
+        <div class="col-12  mb-5 justify-content-center col-md-12   align-self-end  ">
+            <div class="d-flex justify-content-center ">
+                <!-- Modal -->
+                <div class="modal-solicitar modal fade" id="descargaTxt" tabindex="-1" aria-labelledby="modalEnvioExitosoLabel" aria-hidden="true">
+                    <div class="modal-solicitar modal-dialog">
+                        <div class="modal-content ">
+                            <div class="modal-solicitar-header modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">¿Deseas descarga el texto? <i class="fas fa-cloud-download-alt"></i></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+             
+                            <div class="modal-solicitar-footer p-4 ">
+                                <div class="text-center">
+
+                                    <button routerLink = "/formulario-solicitud" type="button" class="btn btn-outline-success mx-2"  data-bs-dismiss="modal">Descargar</button>
+                                    <button routerLink = "/inicio-sesion" type="button" class="btn btn-outline-danger mx-2" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalEnvioExitoso">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- fin del modal -->
+
+                <button  data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#descargaTxt"  type="button" (click)="generarTxt()"  class="btn btn-primary btn-lg  shadow-none px-4 py-2 border mx-3 generarExtracto"   > <i class="fas fa-cloud-download-alt"></i> Descargar Texto</button>
+
+            </div>
+        </div>
+        <div class="col-12 btn-sm col-md-12  ">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center  mb-3">
+                    </div>
+                    <div class="col-12 d-flex justify-content-center">
+                        <button   type="button"  class="btn btn-primary btn-lg px-3 mx-2 generarExtracto shadow-none disabled"><i class="far fa-paper-plane"></i> Enviar extractos a Dispapeles</button>
+                        <input class="disabled "  type="file" name="file"   style="margin-top: 20px;"  > 
+
+
+                    </div>
+                </div>
+
+                
+           
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

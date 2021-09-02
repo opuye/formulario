@@ -1,0 +1,37 @@
+
+
+
+html,body{
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+.logoCorfi{
+  height: 58px;
+  background-size: over;
+}
+
+  .icono{
+    color: #fff;
+  }
+
+div, nav.navbar{
+  background: rgba(0, 59, 83) !important;
+  
+ 
+}
+button.navbar-toggler {
+  background: #fff;
+}
+.navbar-light .navbar-nav .nav-link {
+
+  color: #fff;
+}
+div.navbar-nav{
+  color: #fff;
+}
+#cerrar{
+  background-color: #fff;
+  
+}
